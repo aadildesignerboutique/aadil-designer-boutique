@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+
+<!-- IMPORTANT FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aadil Designer Boutique</title>
 
 <style>
@@ -18,18 +23,26 @@ header{
     padding:20px;
     border-bottom:2px solid #d4af37;
 }
-header img{width:130px;}
-h1{color:#d4af37; margin:10px 0 5px;}
-header p{color:#ccc;}
+header img{
+    width:130px;
+    max-width:100%;
+}
+h1{
+    color:#d4af37;
+    margin:10px 0 5px;
+}
+header p{
+    color:#ccc;
+}
 
 /* SLIDER */
 .slider{
     width:100%;
-    height:380px;
+    height:350px;
 }
 .slider img{
     width:100%;
-    height:380px;
+    height:100%;
     object-fit:cover;
 }
 
@@ -66,13 +79,13 @@ h2{
     display:flex;
     align-items:center;
     gap:10px;
-    padding:10px 16px;
+    padding:12px 18px;
     background:#d4af37;
     color:black;
     text-decoration:none;
     border-radius:30px;
     font-weight:bold;
-    margin:8px 0;
+    margin:10px auto;
     width:fit-content;
 }
 .icon-btn img{
@@ -110,15 +123,15 @@ h2{
 /* FORM */
 form input, form textarea{
     width:100%;
-    padding:10px;
+    padding:12px;
     margin:8px 0;
-    border-radius:5px;
+    border-radius:6px;
     border:none;
 }
 form button{
     background:#d4af37;
     color:black;
-    padding:10px;
+    padding:12px;
     border:none;
     width:100%;
     font-weight:bold;
@@ -128,7 +141,7 @@ form button{
 /* MAP */
 iframe{
     width:100%;
-    height:300px;
+    height:280px;
     border:none;
     border-radius:10px;
 }
@@ -145,17 +158,18 @@ footer{
 /* FLOATING ICONS */
 .float{
     position:fixed;
-    right:20px;
+    right:15px;
     width:55px;
     height:55px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
+    z-index:999;
 }
 .float img{
-    width:30px;
-    height:30px;
+    width:28px;
+    height:28px;
 }
 .whatsapp-float{
     bottom:20px;
@@ -165,19 +179,62 @@ footer{
     bottom:90px;
     background:#E1306C;
 }
+
+/* ===================== */
+/* MOBILE VIEW FIX */
+/* ===================== */
+@media (max-width:768px){
+
+h1{
+    font-size:22px;
+}
+
+.slider{
+    height:220px;
+}
+
+section{
+    margin:10px;
+    padding:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:auto;
+}
+
+.review-card{
+    width:100%;
+}
+
+.icon-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.float{
+    width:48px;
+    height:48px;
+}
+.float img{
+    width:24px;
+    height:24px;
+}
+
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.jpg">
+    <img src="logo.jpg" alt="Aadil Designer Boutique">
     <h1>Aadil Designer Boutique</h1>
     <p>Elegance • Style • Perfection</p>
 </header>
 
 <div class="slider">
-    <img src="img1.jpg">
+    <img src="img1.jpg" alt="Boutique Banner">
 </div>
 
 <section>
@@ -226,27 +283,10 @@ WhatsApp
 <div class="review-card">
 <h3>Neha Sharma</h3>
 <div class="stars">★★★★★</div>
-<p>Beautiful designs and very professional service.</p>
-</div>
-
-<div class="review-card">
-<h3>Priya Verma</h3>
-<div class="stars">★★★★☆</div>
-<p>Quality fabric and timely delivery.</p>
+<p>Beautiful designs and professional service.</p>
 </div>
 
 </div>
-</section>
-
-<section>
-<h2>Book Appointment</h2>
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="tel" placeholder="Phone Number" required>
-<input type="date" required>
-<textarea placeholder="Message"></textarea>
-<button>Submit</button>
-</form>
 </section>
 
 <section>
@@ -254,18 +294,10 @@ WhatsApp
 <iframe src="https://www.google.com/maps?q=Aadil+Designer+Boutique+Ghumar+Mandi+Ludhiana&output=embed"></iframe>
 </section>
 
-<section>
-<h2>Contact Us</h2>
-<p>📍 Near Gurudwara Mai Nand Kaur, Ghumar Mandi, Ludhiana</p>
-<p>⏰ 10:00 AM – 9:00 PM</p>
-<p>📞 <strong>9815777137</strong></p>
-</section>
-
 <footer>
-© 2026 Aadil Designer Boutique | All Rights Reserved
+© 2026 Aadil Designer Boutique
 </footer>
 
-<!-- FLOATING ICONS -->
 <a class="float whatsapp-float" href="https://wa.me/919815777137" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
