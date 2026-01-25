@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aadil Designer Boutique</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    background:black;
+    padding:20px;
+    border-bottom:2px solid #d4af37;
+}
+header img{width:130px;}
+h1{color:#d4af37; margin:10px 0 5px;}
+header p{color:#ccc;}
+
+/* SLIDER */
+.slider{
+    width:100%;
+    height:380px;
+}
+.slider img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+}
+
+/* SECTION */
+section{
+    background:#1a1a1a;
+    margin:15px;
+    padding:20px;
+    border-radius:10px;
+}
+h2{
+    color:#d4af37;
+    border-bottom:1px solid #333;
+    padding-bottom:5px;
+}
+
+/* GALLERY */
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+.gallery img{
+    width:220px;
+    height:280px;
+    object-fit:cover;
+    border:2px solid #d4af37;
+    border-radius:10px;
+}
+
+/* ICON BUTTONS */
+.icon-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 16px;
+    background:#d4af37;
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    margin:8px 0;
+    width:fit-content;
+}
+.icon-btn img{
+    width:22px;
+    height:22px;
+}
+
+/* REVIEWS */
+.reviews{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+.review-card{
+    background:#222;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:15px;
+    width:260px;
+}
+.review-card h3{
+    margin:0;
+    color:#d4af37;
+}
+.stars{
+    color:gold;
+    font-size:18px;
+}
+.review-card p{
+    font-size:14px;
+    color:#ccc;
+}
+
+/* FORM */
+form input, form textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:5px;
+    border:none;
+}
+form button{
+    background:#d4af37;
+    color:black;
+    padding:10px;
+    border:none;
+    width:100%;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* MAP */
+iframe{
+    width:100%;
+    height:300px;
+    border:none;
+    border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+    background:black;
+    text-align:center;
+    padding:12px;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* FLOATING ICONS */
+.float{
+    position:fixed;
+    right:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.float img{
+    width:30px;
+    height:30px;
+}
+.whatsapp-float{
+    bottom:20px;
+    background:#25D366;
+}
+.instagram-float{
+    bottom:90px;
+    background:#E1306C;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg">
+    <h1>Aadil Designer Boutique</h1>
+    <p>Elegance • Style • Perfection</p>
+</header>
+
+<div class="slider">
+    <img src="img1.jpg">
+</div>
+
+<section>
+<h2>About Us</h2>
+<p>
+Aadil Designer Boutique offers premium designer suits, bridal wear,
+party wear, and custom tailoring with perfect fitting and elegant designs.
+</p>
+</section>
+
+<section>
+<h2>Our Collection</h2>
+<div class="gallery">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+</div>
+</section>
+
+<section>
+<h2>Follow Us</h2>
+
+<a class="icon-btn" href="https://www.instagram.com/aadil.designer.boutique/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+Instagram
+</a>
+
+<a class="icon-btn" href="https://wa.me/919815777137" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+WhatsApp
+</a>
+
+</section>
+
+<section>
+<h2>Customer Reviews</h2>
+<div class="reviews">
+
+<div class="review-card">
+<h3>Simran Kaur</h3>
+<div class="stars">★★★★★</div>
+<p>Excellent stitching and perfect fitting. Highly recommended.</p>
+</div>
+
+<div class="review-card">
+<h3>Neha Sharma</h3>
+<div class="stars">★★★★★</div>
+<p>Beautiful designs and very professional service.</p>
+</div>
+
+<div class="review-card">
+<h3>Priya Verma</h3>
+<div class="stars">★★★★☆</div>
+<p>Quality fabric and timely delivery.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Book Appointment</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="date" required>
+<textarea placeholder="Message"></textarea>
+<button>Submit</button>
+</form>
+</section>
+
+<section>
+<h2>Visit Our Boutique</h2>
+<iframe src="https://www.google.com/maps?q=Aadil+Designer+Boutique+Ghumar+Mandi+Ludhiana&output=embed"></iframe>
+</section>
+
+<section>
+<h2>Contact Us</h2>
+<p>📍 Near Gurudwara Mai Nand Kaur, Ghumar Mandi, Ludhiana</p>
+<p>⏰ 10:00 AM – 9:00 PM</p>
+<p>📞 <strong>9815777137</strong></p>
+</section>
+
+<footer>
+© 2026 Aadil Designer Boutique | All Rights Reserved
+</footer>
+
+<!-- FLOATING ICONS -->
+<a class="float whatsapp-float" href="https://wa.me/919815777137" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<a class="float instagram-float" href="https://www.instagram.com/aadil.designer.boutique/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+
+</body>
+</html>
