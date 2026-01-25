@@ -91,15 +91,18 @@ h2{
 /* REVIEWS */
 .reviews{
     display:flex;
-    flex-wrap:wrap;
     gap:15px;
-    justify-content:center;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+}
+.reviews::-webkit-scrollbar{
+    display:none;
 }
 .review-card{
     background:#222;
     border-radius:10px;
     padding:15px;
-    width:260px;
+    min-width:260px;
 }
 .review-card h3{
     margin:0;
@@ -147,7 +150,6 @@ footer{
 .slider{height:220px;}
 .gallery img{width:100%;height:auto;}
 .icon-btn{width:100%;justify-content:center;}
-.review-card{width:100%;}
 }
 </style>
 </head>
@@ -172,6 +174,7 @@ footer{
 <img src="img2.jpg">
 <img src="img3.jpg">
 <img src="img4.jpg">
+<img src="img5.jpg">
 <img src="img6.jpg">
 </div>
 </section>
@@ -186,7 +189,7 @@ Instagram
 
 <a class="icon-btn" href="https://pin.it/1A3AOyESd" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png">
-Make Your Look Pinteresty 
+Make Your Look on Pinterest
 </a>
 
 <a class="icon-btn"
@@ -198,25 +201,55 @@ Order on WhatsApp
 
 </section>
 
+<!-- UPDATED REVIEWS -->
 <section>
 <h2>Customer Reviews</h2>
-<div class="reviews">
+
+<p style="text-align:center;color:#d4af37;font-weight:bold;">
+⭐ 4.9/5 Rating • 200+ Happy Customers
+</p>
+
+<div class="reviews" id="reviewSlider">
+
 <div class="review-card">
 <h3>Simran Kaur</h3>
 <div class="stars">★★★★★</div>
-<p>Excellent stitching and perfect fitting.</p>
+<p>Excellent stitching and perfect fitting. Staff behaviour is very polite.</p>
 </div>
+
 <div class="review-card">
 <h3>Neha Sharma</h3>
 <div class="stars">★★★★★</div>
-<p>Beautiful designs and premium quality.</p>
+<p>Beautiful designs and premium fabric quality. Totally satisfied.</p>
 </div>
+
 <div class="review-card">
 <h3>Pooja Verma</h3>
 <div class="stars">★★★★★</div>
-<p>Best designer boutique in Ludhiana.</p>
+<p>Best designer boutique in Ludhiana. Delivery was on time.</p>
 </div>
+
+<div class="review-card">
+<h3>Harpreet Kaur</h3>
+<div class="stars">★★★★★</div>
+<p>Perfect fitting and reasonable pricing. Highly recommended.</p>
 </div>
+
+<div class="review-card">
+<h3>Anjali Gupta</h3>
+<div class="stars">★★★★★</div>
+<p>Very professional service and latest designs available.</p>
+</div>
+
+</div>
+
+<a class="icon-btn"
+href="https://www.google.com/search?q=Aadil+Designer+Boutique+Ludhiana+reviews"
+target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+Add Google Review
+</a>
+
 </section>
 
 <section>
@@ -252,7 +285,17 @@ target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
+<script>
+const slider = document.getElementById("reviewSlider");
+let scrollAmount = 0;
+setInterval(()=>{
+  scrollAmount += 280;
+  if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
+    scrollAmount = 0;
+  }
+  slider.scrollTo({left:scrollAmount, behavior:"smooth"});
+},3000);
+</script>
+
 </body>
 </html>
-
-
