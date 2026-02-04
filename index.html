@@ -7,149 +7,79 @@
 
 <style>
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#111;
-    color:white;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#111;
+  color:#fff;
 }
 
 /* HEADER */
 header{
-    text-align:center;
-    background:black;
-    padding:20px;
-    border-bottom:2px solid #d4af37;
+  text-align:center;
+  background:#000;
+  padding:20px;
+  border-bottom:2px solid #d4af37;
 }
-header img{
-    width:130px;
-}
-h1{
-    color:#d4af37;
-    margin:10px 0 5px;
-}
-header p{
-    color:#ccc;
-}
+header img{width:130px;}
+h1{color:#d4af37;margin:10px 0 5px;}
+header p{color:#ccc;}
 
 /* BANNER */
-.slider{
-    width:100%;
-    height:320px;
-}
 .slider img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+@media(max-width:768px){
+  .slider img{height:200px;}
 }
 
 /* SECTION */
 section{
-    background:#1a1a1a;
-    margin:15px;
-    padding:20px;
-    border-radius:10px;
+  background:#1a1a1a;
+  margin:15px;
+  padding:20px;
+  border-radius:10px;
 }
 h2{
-    color:#d4af37;
-    border-bottom:1px solid #333;
-    padding-bottom:5px;
+  color:#d4af37;
+  border-bottom:1px solid #333;
+  padding-bottom:5px;
 }
 
-/* GALLERY */
-.gallery{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
 }
-.gallery img{
-    width:220px;
-    height:280px;
-    object-fit:cover;
-    border:2px solid #d4af37;
-    border-radius:10px;
+.product{
+  text-align:center;
 }
-
-/* BUTTONS */
-.icon-btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 18px;
-    background:#d4af37;
-    color:black;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
-    margin:12px auto;
-    width:fit-content;
+.product img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border:2px solid #d4af37;
+  border-radius:10px;
 }
-.icon-btn img{
-    width:22px;
+.product h3{
+  color:#d4af37;
+  margin:8px 0 0;
 }
 
-/* REVIEWS */
-.reviews{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-}
-.reviews::-webkit-scrollbar{
-    display:none;
-}
-.review-card{
-    background:#222;
-    border-radius:10px;
-    padding:15px;
-    min-width:260px;
-}
-.review-card h3{
-    margin:0;
-    color:#d4af37;
-}
-.stars{color:gold;}
-.review-card p{color:#ccc;font-size:14px;}
-
-/* MAP */
-iframe{
-    width:100%;
-    height:280px;
-    border:none;
-    border-radius:10px;
+/* MOBILE: 2 PER ROW */
+@media(max-width:768px){
+  .products{grid-template-columns:repeat(2,1fr);}
+  .product img{height:200px;}
 }
 
 /* FOOTER */
 footer{
-    background:black;
-    text-align:center;
-    padding:12px;
-    font-size:14px;
-    color:#aaa;
-}
-
-/* FLOATING ICONS */
-.float{
-    position:fixed;
-    right:15px;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:999;
-}
-.float img{width:28px;}
-.whatsapp-float{bottom:20px;background:#25D366;}
-.instagram-float{bottom:90px;background:#E1306C;}
-.pinterest-float{bottom:160px;background:#BD081C;}
-
-/* MOBILE */
-@media(max-width:768px){
-.slider{height:220px;}
-.gallery img{width:100%;height:auto;}
-.icon-btn{width:100%;justify-content:center;}
+  background:#000;
+  text-align:center;
+  padding:12px;
+  color:#aaa;
 }
 </style>
 </head>
@@ -162,144 +92,50 @@ footer{
 <p>Elegance • Style • Perfection</p>
 </header>
 
-<!-- BANNER -->
 <div class="slider">
 <img src="banner.jpg">
 </div>
 
 <section>
 <h2>Our Collection</h2>
-<div class="gallery">
+
+<div class="products">
+
+<div class="product">
+<a href="order.html?product=Designer Suit">
 <img src="img1.jpg">
+</a>
+<h3>Designer Suit</h3>
+</div>
+
+<div class="product">
+<a href="order.html?product=Bridal Lehenga">
 <img src="img2.jpg">
+</a>
+<h3>Bridal Lehenga</h3>
+</div>
+
+<div class="product">
+<a href="order.html?product=Party Wear Gown">
 <img src="img3.jpg">
+</a>
+<h3>Party Wear Gown</h3>
+</div>
+
+<div class="product">
+<a href="order.html?product=Festive Kurti Set">
 <img src="img4.jpg">
-<img src="img6.jpg">
-<img src="img7.jpg">
-</div>
-</section>
-
-<section>
-<h2>Follow Us</h2>
-
-<a class="icon-btn" href="https://www.instagram.com/aadil.designer.boutique/" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-Instagram
 </a>
-
-<a class="icon-btn" href="https://pin.it/1A3AOyESd" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/145/145808.png">
-Make Your Look Pinteresty
-</a>
-
-<a class="icon-btn"
-href="https://wa.me/919815777137?text=Hi%20I%20want%20to%20place%20an%20order%20from%20your%20website"
-target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-Order on WhatsApp
-</a>
-
-</section>
-
-<!-- UPDATED REVIEWS -->
-<section>
-<h2>Customer Reviews</h2>
-
-<p style="text-align:center;color:#d4af37;font-weight:bold;">
-⭐ 4.9/5 Rating • 200+ Happy Customers
-</p>
-
-<div class="reviews" id="reviewSlider">
-
-<div class="review-card">
-<h3>Simran Kaur</h3>
-<div class="stars">★★★★★</div>
-<p>Excellent stitching and perfect fitting. Staff behaviour is very polite.</p>
-</div>
-
-<div class="review-card">
-<h3>Neha Sharma</h3>
-<div class="stars">★★★★★</div>
-<p>Beautiful designs and premium fabric quality. Totally satisfied.</p>
-</div>
-
-<div class="review-card">
-<h3>Pooja Verma</h3>
-<div class="stars">★★★★★</div>
-<p>Best designer boutique in Ludhiana. Delivery was on time.</p>
-</div>
-
-<div class="review-card">
-<h3>Harpreet Kaur</h3>
-<div class="stars">★★★★★</div>
-<p>Perfect fitting and reasonable pricing. Highly recommended.</p>
-</div>
-
-<div class="review-card">
-<h3>Anjali Gupta</h3>
-<div class="stars">★★★★★</div>
-<p>Very professional service and latest designs available.</p>
+<h3>Festive Kurti Set</h3>
 </div>
 
 </div>
-
-<a class="icon-btn"
-href="https://www.google.com/search?q=Aadil+Designer+Boutique+Ludhiana+reviews"
-target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
-Add Google Review
-</a>
-
-</section>
-
-<section>
-<h2>Visit Our Boutique</h2>
-<iframe src="https://www.google.com/maps?q=Aadil+Designer+Boutique+Ghumar+Mandi+Ludhiana&output=embed"></iframe>
-</section>
-
-<section>
-<h2>About Us</h2>
-<p><strong>Aadil Designer Boutique</strong> is a reputed boutique in Ghumar Mandi, Ludhiana, established in <strong>2005</strong>.</p>
-<p><strong>Owner:</strong> Shakeel Ahmed</p>
-<p><strong>Second Owner:</strong> Aadil</p>
-<p><strong>Contact:</strong> 9815777137</p>
-<p>We believe in quality fabric, elegant designs and customer satisfaction.</p>
 </section>
 
 <footer>
 © 2026 Aadil Designer Boutique | Since 2005
 </footer>
 
-<!-- FLOATING ICONS -->
-<a class="float pinterest-float" href="https://pin.it/1A3AOyESd" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/145/145808.png">
-</a>
-
-<a class="float instagram-float" href="https://www.instagram.com/aadil.designer.boutique/" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-
-<a class="float whatsapp-float"
-href="https://wa.me/919815777137?text=Hi%20I%20want%20to%20place%20an%20order%20from%20your%20website"
-target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-
-<script>
-const slider = document.getElementById("reviewSlider");
-let scrollAmount = 0;
-setInterval(()=>{
-  scrollAmount += 280;
-  if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
-    scrollAmount = 0;
-  }
-  slider.scrollTo({left:scrollAmount, behavior:"smooth"});
-},3000);
-</script>
-
 </body>
 </html>
-
-
-
 
