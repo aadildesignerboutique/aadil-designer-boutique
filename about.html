@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Aadil Designer Boutique</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#111;
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  background:#000;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  border-bottom:2px solid #d4af37;
+}
+.menu-btn{font-size:26px;color:#d4af37;cursor:pointer;}
+header img{width:90px;}
+header .title{text-align:center;width:100%;}
+header h1{color:#d4af37;margin:4px 0;font-size:20px;}
+header p{color:#ccc;margin:0;font-size:14px;}
+
+/* DRAWER */
+.drawer{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#111;
+  padding:20px;
+  transition:.3s;
+  z-index:1000;
+}
+.drawer.open{left:0;}
+.drawer a{
+  display:block;
+  padding:14px 0;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  border-bottom:1px solid #333;
+}
+.drawer a:hover{color:#d4af37;}
+.close-btn{text-align:right;font-size:22px;color:#d4af37;cursor:pointer;}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  z-index:999;
+}
+.overlay.show{display:block;}
+
+/* CONTENT */
+.section{
+  padding:25px;
+  line-height:1.7;
+}
+.section h2{
+  color:#d4af37;
+  text-align:center;
+  margin-bottom:15px;
+}
+.section p{
+  color:#ccc;
+  font-size:15px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  text-align:center;
+  padding:12px;
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="close-btn" onclick="toggleMenu()">✖</div>
+  <a href="index.html">Home</a>
+  <a href="orders.html">Orders</a>
+  <a href="location.html">Location</a>
+  <a href="about.html">About Us</a>
+</div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <img src="logo.jpg">
+  <div class="title">
+    <h1>Aadil Designer Boutique</h1>
+    <p>Since 2005 • Ludhiana</p>
+  </div>
+</header>
+
+<!-- ABOUT CONTENT -->
+<div class="section">
+  <h2>About Us</h2>
+
+  <p>
+    <strong>Aadil Designer Boutique</strong> is a trusted and well-known
+    designer boutique located in <strong>Ghumar Mandi, Ludhiana</strong>.
+    Established in <strong>2005</strong>, we have been serving our customers
+    with premium quality fabrics, elegant designs, and perfect stitching.
+  </p>
+
+  <p>
+    We specialize in <strong>designer suits, bridal wear, party wear,
+    festive outfits</strong> and <strong>custom stitching</strong>.
+    Every outfit is crafted with attention to detail and customer satisfaction.
+  </p>
+
+  <p>
+    <strong>Owner:</strong> Shakeel Ahmed<br>
+    <strong>Co-Owner:</strong> Aadil<br>
+    <strong>Contact:</strong> 9815777137
+  </p>
+
+  <p>
+    Our mission is simple — to make every customer look elegant,
+    confident, and unique.
+  </p>
+</div>
+
+<footer>
+© 2026 Aadil Designer Boutique
+</footer>
+
+<script>
+function toggleMenu(){
+  drawer.classList.toggle("open");
+  overlay.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
