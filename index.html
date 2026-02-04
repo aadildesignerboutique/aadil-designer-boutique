@@ -24,6 +24,16 @@ header img{width:130px;}
 h1{color:#d4af37;margin:10px 0 5px;}
 header p{color:#ccc;}
 
+/* BANNER */
+.slider img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+@media(max-width:768px){
+  .slider img{height:220px;}
+}
+
 /* SECTION */
 section{
   background:#1a1a1a;
@@ -60,6 +70,50 @@ h2{
   .product img{height:200px;}
 }
 
+/* BUTTONS */
+.icon-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 18px;
+  background:#d4af37;
+  color:black;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+  margin:12px auto;
+  width:fit-content;
+}
+.icon-btn img{width:22px;}
+@media(max-width:768px){
+  .icon-btn{width:100%;justify-content:center;}
+}
+
+/* REVIEWS */
+.reviews{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+}
+.reviews::-webkit-scrollbar{display:none;}
+.review-card{
+  background:#222;
+  border-radius:10px;
+  padding:15px;
+  min-width:260px;
+}
+.review-card h3{margin:0;color:#d4af37;}
+.stars{color:gold;}
+.review-card p{color:#ccc;font-size:14px;}
+
+/* MAP */
+iframe{
+  width:100%;
+  height:280px;
+  border:none;
+  border-radius:10px;
+}
+
 /* ORDER PAGE */
 #orderPage{
   display:none;
@@ -76,12 +130,8 @@ h2{
   border-radius:10px;
   border:2px solid #d4af37;
 }
-label{
-  display:block;
-  margin-top:14px;
-  font-size:14px;
-}
-input, select, textarea{
+label{display:block;margin-top:14px;}
+input,select,textarea{
   width:100%;
   padding:12px;
   margin-top:6px;
@@ -98,16 +148,26 @@ button{
   font-weight:bold;
   border:none;
   border-radius:30px;
-  cursor:pointer;
 }
-.back{
-  text-align:center;
-  margin-top:15px;
+.back{text-align:center;margin-top:15px;}
+.back a{color:#d4af37;text-decoration:none;}
+
+/* FLOATING ICONS */
+.float{
+  position:fixed;
+  right:15px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
-.back a{
-  color:#d4af37;
-  text-decoration:none;
-}
+.float img{width:28px;}
+.whatsapp{bottom:20px;background:#25D366;}
+.instagram{bottom:90px;background:#E1306C;}
+.pinterest{bottom:160px;background:#BD081C;}
 
 /* FOOTER */
 footer{
@@ -127,43 +187,74 @@ footer{
 <p>Elegance • Style • Perfection</p>
 </header>
 
-<!-- HOME PAGE -->
+<div class="slider">
+<img src="banner.jpg">
+</div>
+
+<!-- HOME -->
 <div id="homePage">
+
 <section>
 <h2>Our Collection</h2>
-
 <div class="products">
 
 <div class="product">
-<a href="?order=Designer Suit&img=img1.jpg">
-<img src="img1.jpg">
-</a>
+<a href="?order=Designer Suit&img=img1.jpg"><img src="img1.jpg"></a>
 <h3>Designer Suit</h3>
 </div>
 
 <div class="product">
-<a href="?order=Bridal Lehenga&img=img2.jpg">
-<img src="img2.jpg">
-</a>
+<a href="?order=Bridal Lehenga&img=img2.jpg"><img src="img2.jpg"></a>
 <h3>Bridal Lehenga</h3>
 </div>
 
 <div class="product">
-<a href="?order=Party Wear Gown&img=img3.jpg">
-<img src="img3.jpg">
-</a>
+<a href="?order=Party Wear Gown&img=img3.jpg"><img src="img3.jpg"></a>
 <h3>Party Wear Gown</h3>
 </div>
 
 <div class="product">
-<a href="?order=Festive Kurti Set&img=img4.jpg">
-<img src="img4.jpg">
-</a>
+<a href="?order=Festive Kurti Set&img=img4.jpg"><img src="img4.jpg"></a>
 <h3>Festive Kurti Set</h3>
 </div>
 
 </div>
 </section>
+
+<section>
+<h2>Follow Us</h2>
+<a class="icon-btn" href="https://www.instagram.com/aadil.designer.boutique/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">Instagram
+</a>
+
+<a class="icon-btn" href="https://pin.it/1A3AOyESd" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/145/145808.png">Pinterest
+</a>
+
+<a class="icon-btn" href="https://wa.me/919815777137" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">Order on WhatsApp
+</a>
+</section>
+
+<section>
+<h2>Customer Reviews</h2>
+<div class="reviews">
+<div class="review-card"><h3>Simran Kaur</h3><div class="stars">★★★★★</div><p>Excellent fitting.</p></div>
+<div class="review-card"><h3>Neha Sharma</h3><div class="stars">★★★★★</div><p>Premium designs.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Visit Our Boutique</h2>
+<iframe src="https://www.google.com/maps?q=Aadil+Designer+Boutique+Ghumar+Mandi+Ludhiana&output=embed"></iframe>
+</section>
+
+<section>
+<h2>About Us</h2>
+<p><b>Aadil Designer Boutique</b> established in 2005, Ghumar Mandi, Ludhiana.</p>
+<p><b>Contact:</b> 9815777137</p>
+</section>
+
 </div>
 
 <!-- ORDER PAGE -->
@@ -172,77 +263,47 @@ footer{
 <img id="orderImg">
 <p id="productName" style="text-align:center;color:#ccc;"></p>
 
-<form onsubmit="sendOrder(); return false;">
-<label>Your Name</label>
-<input type="text" id="name" required>
-
-<label>Phone Number</label>
-<input type="tel" id="phone" required>
-
-<label>City</label>
-<input type="text" id="city" required>
-
-<label>Select Size</label>
-<select id="size" required>
-<option value="">Choose size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>Custom</option>
-</select>
-
-<label>Select Color</label>
-<select id="color" required>
-<option value="">Choose color</option>
-<option>Red</option>
-<option>Black</option>
-<option>Blue</option>
-<option>Green</option>
-<option>Pastel</option>
-<option>Custom</option>
-</select>
-
-<label>Note (Optional)</label>
-<textarea id="note" rows="3" placeholder="Any customization details"></textarea>
-
-<button type="submit">Submit & Order on WhatsApp</button>
+<form onsubmit="sendOrder();return false;">
+<label>Name</label><input id="name" required>
+<label>Phone</label><input id="phone" required>
+<label>City</label><input id="city" required>
+<label>Size</label>
+<select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>Custom</option></select>
+<label>Color</label>
+<select id="color"><option>Red</option><option>Black</option><option>Blue</option><option>Custom</option></select>
+<label>Note</label><textarea id="note"></textarea>
+<button>Submit & Order</button>
 </form>
 
-<div class="back">
-<a href="index.html">← Back to Collection</a>
-</div>
+<div class="back"><a href="index.html">← Back</a></div>
 </div>
 
-<footer>
-© 2026 Aadil Designer Boutique | Since 2005
-</footer>
+<footer>© 2026 Aadil Designer Boutique</footer>
+
+<!-- FLOATING -->
+<a class="float whatsapp" href="https://wa.me/919815777137"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
+<a class="float instagram" href="https://www.instagram.com/aadil.designer.boutique/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+<a class="float pinterest" href="https://pin.it/1A3AOyESd"><img src="https://cdn-icons-png.flaticon.com/512/145/145808.png"></a>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const product = params.get("order");
-const img = params.get("img");
-
+const p=new URLSearchParams(location.search);
+const product=p.get("order"),img=p.get("img");
 if(product){
-  document.getElementById("homePage").style.display="none";
-  document.getElementById("orderPage").style.display="block";
-  document.getElementById("productName").innerText = "Product: " + product;
-  document.getElementById("orderImg").src = img;
+homePage.style.display="none";
+orderPage.style.display="block";
+productName.innerText="Product: "+product;
+orderImg.src=img;
 }
-
 function sendOrder(){
-  const msg =
-`New Order Request
-Product: ${product}
-Name: ${name.value}
-Phone: ${phone.value}
-City: ${city.value}
-Size: ${size.value}
-Color: ${color.value}
-Note: ${note.value}`;
-
-  window.location.href =
-  "https://wa.me/919815777137?text=" + encodeURIComponent(msg);
+const msg=`New Order
+Product:${product}
+Name:${name.value}
+Phone:${phone.value}
+City:${city.value}
+Size:${size.value}
+Color:${color.value}
+Note:${note.value}`;
+location.href="https://wa.me/919815777137?text="+encodeURIComponent(msg);
 }
 </script>
 
