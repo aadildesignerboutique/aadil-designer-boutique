@@ -6,6 +6,9 @@
 <title>Aadil Designer Boutique</title>
 
 <style>
+html{
+  scroll-behavior:smooth;
+}
 body{
   margin:0;
   font-family:Arial, sans-serif;
@@ -205,13 +208,13 @@ footer{
 
 <!-- LEFT MENU -->
 <div class="side-menu">
-<a href="#">Home</a>
+<a href="#top">Home</a>
 <a href="#orders">Orders</a>
 <a href="#location">Location</a>
 <a href="#about">About Us</a>
 </div>
 
-<header>
+<header id="top">
 <img src="logo.jpg">
 <h1>Aadil Designer Boutique</h1>
 <p>Elegance • Style • Perfection</p>
@@ -292,12 +295,19 @@ footer{
 <label>City</label><input id="city" required>
 
 <label>Size</label>
-<select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>Custom</option></select>
+<select id="size">
+<option>S</option><option>M</option><option>L</option>
+<option>XL</option><option>Custom</option>
+</select>
 
 <label>Color</label>
-<select id="color"><option>Red</option><option>Black</option><option>Blue</option><option>Custom</option></select>
+<select id="color">
+<option>Red</option><option>Black</option>
+<option>Blue</option><option>Custom</option>
+</select>
 
-<label>Note</label><textarea id="note"></textarea>
+<label>Note</label>
+<textarea id="note"></textarea>
 
 <button>Submit Order</button>
 </form>
@@ -308,9 +318,15 @@ footer{
 <footer>© 2026 Aadil Designer Boutique</footer>
 
 <!-- FLOATING ICONS -->
-<a class="float whatsapp" href="https://wa.me/919815777137"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"></a>
-<a class="float instagram" href="https://www.instagram.com/aadil.designer.boutique/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-<a class="float pinterest" href="https://pin.it/1A3AOyESd"><img src="https://cdn-icons-png.flaticon.com/512/145/145808.png"></a>
+<a class="float whatsapp" href="https://wa.me/919815777137">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+<a class="float instagram" href="https://www.instagram.com/aadil.designer.boutique/">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+<a class="float pinterest" href="https://pin.it/1A3AOyESd">
+<img src="https://cdn-icons-png.flaticon.com/512/145/145808.png">
+</a>
 
 <script>
 let currentProduct="",orderId="";
