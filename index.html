@@ -22,30 +22,13 @@ header{
   gap:14px;
   border-bottom:2px solid #d4af37;
 }
-.menu-btn{
-  font-size:26px;
-  color:#d4af37;
-  cursor:pointer;
-}
-header img{
-  width:90px;
-}
-header .title{
-  text-align:center;
-  width:100%;
-}
-header h1{
-  color:#d4af37;
-  margin:4px 0;
-  font-size:20px;
-}
-header p{
-  color:#ccc;
-  font-size:14px;
-  margin:0;
-}
+.menu-btn{font-size:26px;color:#d4af37;cursor:pointer;}
+header img{width:90px;}
+header .title{text-align:center;width:100%;}
+header h1{color:#d4af37;margin:4px 0;font-size:20px;}
+header p{color:#ccc;margin:0;font-size:14px;}
 
-/* DRAWER (AMAZON STYLE) */
+/* DRAWER */
 .drawer{
   position:fixed;
   top:0;
@@ -54,16 +37,10 @@ header p{
   height:100%;
   background:#111;
   padding:20px;
-  transition:0.3s;
+  transition:.3s;
   z-index:1000;
 }
-.drawer.open{
-  left:0;
-}
-.drawer h3{
-  color:#d4af37;
-  margin-top:0;
-}
+.drawer.open{left:0;}
 .drawer a{
   display:block;
   padding:14px 0;
@@ -72,32 +49,23 @@ header p{
   font-weight:bold;
   border-bottom:1px solid #333;
 }
-.drawer a:hover{
-  color:#d4af37;
-}
-.close-btn{
-  text-align:right;
-  font-size:22px;
-  color:#d4af37;
-  cursor:pointer;
-}
+.drawer a:hover{color:#d4af37;}
+.close-btn{text-align:right;font-size:22px;color:#d4af37;cursor:pointer;}
 
 /* OVERLAY */
 .overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,.6);
   display:none;
   z-index:999;
 }
-.overlay.show{
-  display:block;
-}
+.overlay.show{display:block;}
 
-/* HOME CONTENT */
+/* HERO */
 .hero{
   text-align:center;
-  padding:80px 20px;
+  padding:70px 20px;
 }
 .hero h2{
   color:#d4af37;
@@ -105,9 +73,19 @@ header p{
 }
 .hero p{
   color:#ccc;
-  max-width:500px;
-  margin:auto;
+  max-width:520px;
+  margin:10px auto;
   font-size:15px;
+}
+.hero a{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 26px;
+  background:#d4af37;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:30px;
 }
 
 /* FOOTER */
@@ -116,9 +94,6 @@ footer{
   text-align:center;
   padding:12px;
   color:#aaa;
-  position:fixed;
-  bottom:0;
-  width:100%;
 }
 </style>
 </head>
@@ -128,42 +103,41 @@ footer{
 <!-- DRAWER -->
 <div class="drawer" id="drawer">
   <div class="close-btn" onclick="toggleMenu()">✖</div>
-  <h3>Menu</h3>
   <a href="index.html">Home</a>
   <a href="orders.html">Orders</a>
   <a href="location.html">Location</a>
   <a href="about.html">About Us</a>
 </div>
-
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <!-- HEADER -->
 <header>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <img src="logo.jpg" alt="Logo">
+  <img src="logo.jpg">
   <div class="title">
     <h1>Aadil Designer Boutique</h1>
     <p>Elegance • Style • Perfection</p>
   </div>
 </header>
 
-<!-- HOME PAGE CONTENT -->
+<!-- HOME CONTENT -->
 <div class="hero">
   <h2>Welcome to Aadil Designer Boutique</h2>
   <p>
-    Discover premium designer wear crafted with elegance and perfection.
-    Use the menu to explore our collection, place orders, or find our location.
+    Discover premium designer wear, bridal collections and
+    custom stitching crafted with perfection since 2005.
   </p>
+  <a href="orders.html">Explore Collection</a>
 </div>
 
 <footer>
-  © 2026 Aadil Designer Boutique
+© 2026 Aadil Designer Boutique
 </footer>
 
 <script>
 function toggleMenu(){
-  document.getElementById("drawer").classList.toggle("open");
-  document.getElementById("overlay").classList.toggle("show");
+  drawer.classList.toggle("open");
+  overlay.classList.toggle("show");
 }
 </script>
 
