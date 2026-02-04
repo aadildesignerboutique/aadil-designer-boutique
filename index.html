@@ -24,16 +24,6 @@ header img{width:130px;}
 h1{color:#d4af37;margin:10px 0 5px;}
 header p{color:#ccc;}
 
-/* BANNER */
-.slider img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
-@media(max-width:768px){
-  .slider img{height:200px;}
-}
-
 /* SECTION */
 section{
   background:#1a1a1a;
@@ -51,10 +41,7 @@ h2{
 .products{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-.product{
-  text-align:center;
+  gap:12px;
 }
 .product img{
   width:100%;
@@ -64,14 +51,62 @@ h2{
   border-radius:10px;
 }
 .product h3{
+  text-align:center;
   color:#d4af37;
-  margin:8px 0 0;
+  margin-top:6px;
 }
-
-/* MOBILE: 2 PER ROW */
 @media(max-width:768px){
   .products{grid-template-columns:repeat(2,1fr);}
   .product img{height:200px;}
+}
+
+/* ORDER PAGE */
+#orderPage{
+  display:none;
+  max-width:420px;
+  margin:40px auto;
+  background:#1c1c1c;
+  padding:25px;
+  border-radius:15px;
+}
+#orderImg{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid #d4af37;
+}
+label{
+  display:block;
+  margin-top:14px;
+  font-size:14px;
+}
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius:8px;
+  border:none;
+}
+textarea{resize:none;}
+button{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  background:#d4af37;
+  color:#000;
+  font-weight:bold;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+.back{
+  text-align:center;
+  margin-top:15px;
+}
+.back a{
+  color:#d4af37;
+  text-decoration:none;
 }
 
 /* FOOTER */
@@ -92,38 +127,36 @@ footer{
 <p>Elegance • Style • Perfection</p>
 </header>
 
-<div class="slider">
-<img src="banner.jpg">
-</div>
-
+<!-- HOME PAGE -->
+<div id="homePage">
 <section>
 <h2>Our Collection</h2>
 
 <div class="products">
 
 <div class="product">
-<a href="order.html?product=Designer Suit">
+<a href="?order=Designer Suit&img=img1.jpg">
 <img src="img1.jpg">
 </a>
 <h3>Designer Suit</h3>
 </div>
 
 <div class="product">
-<a href="order.html?product=Bridal Lehenga">
+<a href="?order=Bridal Lehenga&img=img2.jpg">
 <img src="img2.jpg">
 </a>
 <h3>Bridal Lehenga</h3>
 </div>
 
 <div class="product">
-<a href="order.html?product=Party Wear Gown">
+<a href="?order=Party Wear Gown&img=img3.jpg">
 <img src="img3.jpg">
 </a>
 <h3>Party Wear Gown</h3>
 </div>
 
 <div class="product">
-<a href="order.html?product=Festive Kurti Set">
+<a href="?order=Festive Kurti Set&img=img4.jpg">
 <img src="img4.jpg">
 </a>
 <h3>Festive Kurti Set</h3>
@@ -131,11 +164,87 @@ footer{
 
 </div>
 </section>
+</div>
+
+<!-- ORDER PAGE -->
+<div id="orderPage">
+<h2 style="text-align:center;">Order Product</h2>
+<img id="orderImg">
+<p id="productName" style="text-align:center;color:#ccc;"></p>
+
+<form onsubmit="sendOrder(); return false;">
+<label>Your Name</label>
+<input type="text" id="name" required>
+
+<label>Phone Number</label>
+<input type="tel" id="phone" required>
+
+<label>City</label>
+<input type="text" id="city" required>
+
+<label>Select Size</label>
+<select id="size" required>
+<option value="">Choose size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>Custom</option>
+</select>
+
+<label>Select Color</label>
+<select id="color" required>
+<option value="">Choose color</option>
+<option>Red</option>
+<option>Black</option>
+<option>Blue</option>
+<option>Green</option>
+<option>Pastel</option>
+<option>Custom</option>
+</select>
+
+<label>Note (Optional)</label>
+<textarea id="note" rows="3" placeholder="Any customization details"></textarea>
+
+<button type="submit">Submit & Order on WhatsApp</button>
+</form>
+
+<div class="back">
+<a href="index.html">← Back to Collection</a>
+</div>
+</div>
 
 <footer>
 © 2026 Aadil Designer Boutique | Since 2005
 </footer>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+const product = params.get("order");
+const img = params.get("img");
+
+if(product){
+  document.getElementById("homePage").style.display="none";
+  document.getElementById("orderPage").style.display="block";
+  document.getElementById("productName").innerText = "Product: " + product;
+  document.getElementById("orderImg").src = img;
+}
+
+function sendOrder(){
+  const msg =
+`New Order Request
+Product: ${product}
+Name: ${name.value}
+Phone: ${phone.value}
+City: ${city.value}
+Size: ${size.value}
+Color: ${color.value}
+Note: ${note.value}`;
+
+  window.location.href =
+  "https://wa.me/919815777137?text=" + encodeURIComponent(msg);
+}
+</script>
+
 </body>
 </html>
-
